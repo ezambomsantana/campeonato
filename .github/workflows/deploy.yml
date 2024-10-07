@@ -61,4 +61,4 @@ jobs:
         script: |
           docker stop campeonato
           docker rm --force campeonato
-          docker run -d -p 8080:8080 --network=rede --name campeonato ezambomsantana/campeonato-ci:${{ github.sha }}
+          docker run -d -p 8080:8080 -e TESTE=teste -e spring_profiles_active=test --network=rede --name campeonato ezambomsantana/campeonato-ci:${{ github.sha }}
